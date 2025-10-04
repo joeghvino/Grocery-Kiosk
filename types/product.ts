@@ -5,4 +5,5 @@ export interface Product {
   aisle: string
   price: number
   image: string
+  store: string[]
 }

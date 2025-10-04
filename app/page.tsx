@@ -5,7 +5,7 @@ import { ProductGrid } from "@/components/product-grid"
 import { ShoppingList } from "@/components/shopping-list"
 import { Search, ShoppingCart, Store } from "lucide-react"
 import type { Product } from "@/types/product"
-import  Searchbar  from "@/components/searchbar"
+import  Searchbar  from "@/components/Searchbar"
 
 export default function GroceryShoppingApp() {
   const [selectedProducts, setSelectedProducts] = useState<Product[]>([])
