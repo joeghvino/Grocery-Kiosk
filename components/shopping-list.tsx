@@ -13,15 +13,15 @@ interface ShoppingListProps {
 }
 
 export function ShoppingList({ products, onRemoveProduct, onClearList }: ShoppingListProps) {
-  const sortedProducts = [...products].sort((a, b) => a.aisle - b.aisle)
+  const sortedProducts = [...products].sort((a, b) => Number(a.aisle) - Number(b.aisle))
   const totalPrice = products.reduce((sum, product) => sum + product.price, 0)
 
   const groupedByAisle = sortedProducts.reduce(
     (acc, product) => {
-      if (!acc[product.aisle]) {
-        acc[product.aisle] = []
+      if (!acc[Number(product.aisle)]) {
+        acc[Number(product.aisle)] = []
       }
-      acc[product.aisle].push(product)
+      acc[Number(product.aisle)].push(product)
       return acc
     },
     {} as Record<number, Product[]>,
@@ -86,7 +86,7 @@ export function ShoppingList({ products, onRemoveProduct, onClearList }: Shoppin
                               variant="ghost"
                               size="icon"
                               className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
-                              onClick={() => onRemoveProduct(product.id)}
+                              onClick={() => onRemoveProduct(String(product.id))}
                             >
                               <X className="w-4 h-4" />
                             </Button>

@@ -3,8 +3,9 @@
 import { useState } from "react"
 import { ProductGrid } from "@/components/product-grid"
 import { ShoppingList } from "@/components/shopping-list"
-import { ShoppingCart, Store } from "lucide-react"
+import { Search, ShoppingCart, Store } from "lucide-react"
 import type { Product } from "@/types/product"
+import  Searchbar  from "@/components/searchbar"
 
 export default function GroceryShoppingApp() {
   const [selectedProducts, setSelectedProducts] = useState<Product[]>([])
@@ -20,7 +21,7 @@ export default function GroceryShoppingApp() {
   }
 
   const handleRemoveProduct = (productId: string) => {
-    setSelectedProducts((prev) => prev.filter((p) => p.id !== productId))
+    setSelectedProducts((prev) => prev.filter((p) => p.id !== Number(productId)))
   }
 
   const handleClearList = () => {
@@ -39,8 +40,10 @@ export default function GroceryShoppingApp() {
               <div>
                 <h1 className="text-2xl font-bold text-balance">Smart Grocery List</h1>
                 <p className="text-sm text-muted-foreground">Shop efficiently by aisle</p>
+               
               </div>
             </div>
+            <Searchbar />
             <div className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full">
               <ShoppingCart className="w-5 h-5" />
               <span className="font-semibold">{selectedProducts.length}</span>

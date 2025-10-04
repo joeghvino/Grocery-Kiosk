@@ -4,10 +4,13 @@ import { products } from "@/lib/products"
 import { ProductCard } from "./product-card"
 import type { Product } from "@/types/product"
 
+
 interface ProductGridProps {
   selectedProducts: Product[]
   onProductToggle: (product: Product) => void
+
 }
+
 
 export function ProductGrid({ selectedProducts, onProductToggle }: ProductGridProps) {
   const categories = Array.from(new Set(products.map((p) => p.category)))
@@ -21,13 +24,13 @@ export function ProductGrid({ selectedProducts, onProductToggle }: ProductGridPr
 
       {categories.map((category) => {
         const categoryProducts = products.filter((p) => p.category === category)
-        const aisle = categoryProducts[0]?.aisle
+        //const aisle = categoryProducts[0]?.aisle
 
         return (
           <div key={category} className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">
-                Aisle {aisle}
+                
               </div>
               <h3 className="text-xl font-semibold">{category}</h3>
             </div>
