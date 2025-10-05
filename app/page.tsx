@@ -5,7 +5,8 @@ import { ProductGrid } from "@/components/product-grid"
 import { ShoppingList } from "@/components/shopping-list"
 import { Search, ShoppingCart, Store } from "lucide-react"
 import type { Product } from "@/types/product"
-import  Searchbar  from "@/components/Searchbar"
+import Searchbar from "@/components/Searchbar"
+import { products } from "@/lib/products"
 
 export default function GroceryShoppingApp() {
   const [selectedProducts, setSelectedProducts] = useState<Product[]>([])
@@ -27,6 +28,11 @@ export default function GroceryShoppingApp() {
   const handleClearList = () => {
     setSelectedProducts([])
   }
+  const [selectedTown, setSelectedTown] = useState<string>("")
+
+  const handleSelectTown = (townId: string) => {
+    setSelectedTown(townId)
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -43,7 +49,7 @@ export default function GroceryShoppingApp() {
                
               </div>
             </div>
-            <Searchbar />
+            <Searchbar onSelect={handleSelectTown} />
             <div className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full">
               <ShoppingCart className="w-5 h-5" />
               <span className="font-semibold">{selectedProducts.length}</span>
@@ -55,7 +61,9 @@ export default function GroceryShoppingApp() {
       <main className="container mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <ProductGrid selectedProducts={selectedProducts} onProductToggle={handleProductToggle} />
+            <ProductGrid selectedProducts={selectedProducts} onProductToggle={handleProductToggle}
+            townFilter={selectedTown}
+            />
           </div>
           <div className="lg:col-span-1">
             <ShoppingList

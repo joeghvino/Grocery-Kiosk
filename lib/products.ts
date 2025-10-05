@@ -10,8 +10,8 @@ export const products: Product[] =
         price: 4.29,
         aisle: "A1",
         image: "https://images.cdn.shoprite.com/detail/00041190467556_1",
-        category: "Animal product",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        category: "animal product",
+        store: [ "new-brunswick", "metuchen", "edison" ]
     },
     {
         
@@ -20,8 +20,8 @@ export const products: Product[] =
         price: 6.99,
         aisle: "A2",
         image: "https://images.cdn.shoprite.com/detail/00044700019887_1",
-        category: "Animal product",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        category: "animal product",
+        store: [ "new-brunswick", "metuchen", "edison" ]
     },
     {
         
@@ -30,8 +30,8 @@ export const products: Product[] =
         price: 4.59,
         aisle: "A3",
         image: "https://images.cdn.shoprite.com/detail/00041190467150_1",
-        category: "Dairy",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        category: "dairy",
+        store: [ "new-brunswick", "metuchen", "edison" ]
     },
     {
         
@@ -40,8 +40,8 @@ export const products: Product[] =
         price: 4.99,
         aisle: "A4",
         image: "https://images.cdn.shoprite.com/detail/00818290016263_1",
-        category: "Dairy",
-        store: [ "Metuchen", "Edison" ]
+        category: "dairy",
+        store: [ "metuchen", "edison" ]
     },
     {
         
@@ -50,8 +50,8 @@ export const products: Product[] =
         price: 1.49,
         aisle: "A5",
         image: "https://images.cdn.shoprite.com/detail/00041190576586_1",
-        category: "Bakery",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        category: "bakery",
+        store: [ "new-brunswick", "metuchen", "edison" ]
     },
     {
         
@@ -60,8 +60,8 @@ export const products: Product[] =
         price: 4.99,
         aisle: "B1",
         image: "https://images.cdn.shoprite.com/detail/00020735161258_1",
-        category: "Frozen",
-        store: [ "New Brunswick" ]
+        category: "frozen",
+        store: [ "new-brunswick" ]
     },
     {
         
@@ -70,8 +70,8 @@ export const products: Product[] =
         price: 3.99,
         aisle: "B2",
         image: "https://images.cdn.shoprite.com/detail/00072180639837_1",
-        category: "Frozen",
-        store: [ "Edison" ]
+        category: "frozen",
+        store: [ "edison" ]
     },
     {
         
@@ -80,8 +80,8 @@ export const products: Product[] =
         price: 6.79,
         aisle: "B3",
         image: "https://images.cdn.shoprite.com/detail/00077567001214_596",
-        category: "Frozen",
-        store: [ "New Brunswick", "Metuchen" ]
+        category: "frozen",
+        store: [ "new-brunswick", "metuchen" ]
     },
     {
         
@@ -90,8 +90,8 @@ export const products: Product[] =
         price: 4.99,
         aisle: "B4",
         image: "https://images.cdn.shoprite.com/cell/00810264027459_1",
-        category: "Frozen",
-        store: [ "Metuchen" ]
+        category: "frozen",
+        store: [ "metuchen" ]
     },
     {
         
@@ -100,8 +100,8 @@ export const products: Product[] =
         price: 3.99,
         aisle: "B5",
         image: "https://images.cdn.shoprite.com/detail/00020169222099_1",
-        category: "Frozen",
-        store: [ "New Brunswick", "Edison" ]
+        category: "frozen",
+        store: [ "new-brunswick", "edison" ]
     },
     {
         
@@ -110,8 +110,8 @@ export const products: Product[] =
         price: 1.99,
         aisle: "C1",
         image: "https://images.cdn.shoprite.com/detail/00209750000005_1",
-        category: "Produce",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        category: "produce",
+        store: [ "new-brunswick", "metuchen", "edison" ]
     },
     {
         
@@ -120,8 +120,8 @@ export const products: Product[] =
         price: 2.99,
         aisle: "C2",
         image: "https://assets.wakefern.com/is/image/wakefern/88194580035-001?$Mi9Product_detail$",
-        category: "Produce",
-        store: [ "New Brunswick" ]
+        category: "produce",
+        store: [ "new-brunswick" ]
     },
     {
         
@@ -130,8 +130,8 @@ export const products: Product[] =
         price: 3.99,
         aisle: "C3",
         image: "https://assets.wakefern.com/is/image/wakefern/81003518329-001?$Mi9Product_detail$",
-        category: "Produce",
-        store: [ "Edison" ]
+        category: "produce",
+        store: [ "edison" ]
     },
     {
         
@@ -140,8 +140,8 @@ export const products: Product[] =
         price: 3.99,
         aisle: "C4",
         image: "https://images.cdn.shoprite.com/detail/00041190071951_597",
-        category: "Produce",
-        store: [ "New Brunswick", "Metuchen"]
+        category: "produce",
+        store: [ "new-brunswick", "metuchen"]
     },
     {
         
@@ -150,8 +150,8 @@ export const products: Product[] =
         price: 4.49,
         aisle: "C5",
         image: "https://images.cdn.shoprite.com/detail/00030223041252_1",
-        category: "Produce",
-        store: [ "Metuchen", "Edison" ]
+        category: "produce",
+        store: [ "metuchen", "edison" ]
     },
     {
         
@@ -161,7 +161,7 @@ export const products: Product[] =
         aisle: "D1",
         image: "https://images.cdn.shoprite.com/detail/00200131000003_322",
         category: "Animal product",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        store: [ "new-brunswick", "metuchen", "edison" ]
     },
     {
         
@@ -171,7 +171,7 @@ export const products: Product[] =
         aisle: "D2",
         image: "https://images.cdn.shoprite.com/detail/00612669317063_1",
         category: "Animal product",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        store: [ "new-brunswick", "metuchen", "edison" ]
     },
      {
         
@@ -181,7 +181,7 @@ export const products: Product[] =
         aisle: "D3",
         image: "https://assets.wakefern.com/is/image/wakefern/25161500000-001?$Mi9Product_detail$",
         category: "Animal product",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        store: [ "new-brunswick", "metuchen", "edison" ]
     },
      {
         
@@ -191,7 +191,7 @@ export const products: Product[] =
         aisle: "D4",
         image: "https://images.cdn.shoprite.com/detail/00041190413157_1",
         category: "Animal product",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        store: [ "new-brunswick", "metuchen", "edison" ]
     },
      {
         
@@ -201,7 +201,7 @@ export const products: Product[] =
         aisle: "D5",
         image: "https://assets.wakefern.com/is/image/wakefern/20114400000-001?$Mi9Product_detail$",
         category: "Animal product",
-        store: [ "New Brunswick", "Metuchen", "Edison" ]
+        store: [ "new-brunswick", "metuchen", "edison" ]
     }
 ]
       

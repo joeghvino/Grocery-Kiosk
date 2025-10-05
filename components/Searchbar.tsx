@@ -1,37 +1,37 @@
 import React, { useState } from 'react';
 
-const towns = [
+const store = [
     { name: 'New Brunswick', id: 'new-brunswick' },
     { name: 'Edison', id: 'edison' },
     { name: 'Metuchen', id: 'metuchen' },
 ];
 
 type Props = {
-    onSelect?: (townId: string) => void;
+    onSelect?: (storeId: string) => void;
 };
-
+    
 const StoreDropdown: React.FC<Props> = ({ onSelect }) => {
-    const [selectedTown, setSelectedTown] = useState<string>('');
+    const [selectedStore, setSelectedStore] = useState<string>('');
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const value = e.target.value;
-        setSelectedTown(value);
+        setSelectedStore(value);
         if (onSelect) onSelect(value);
     };
 
     return (
         <div>
-            <label htmlFor="town-select">Select Town:</label>
+            <label htmlFor="store-select">Select Store:</label>
             <select
-                id="town-select"
-                value={selectedTown}
+                id="store-select"
+                value={selectedStore}
                 onChange={handleChange}
                 style={{ marginLeft: '8px' }}
             >
-                <option value="">--Choose a town--</option>
-                {towns.map((town) => (
-                    <option key={town.id} value={town.id}>
-                        {town.name}
+                <option value="">--Choose a store--</option>
+                {store.map((store) => (
+                    <option key={store.id} value={store.id}>
+                        {store.name}
                     </option>
                 ))}
             </select>
