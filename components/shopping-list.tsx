@@ -13,19 +13,27 @@ interface ShoppingListProps {
 }
 
 export function ShoppingList({ products, onRemoveProduct, onClearList }: ShoppingListProps) {
+  // const sortedProducts = [...products].sort((a, b) => Number(a.aisle) - Number(b.aisle))
   const sortedProducts = [...products].sort((a, b) => Number(a.aisle) - Number(b.aisle))
   const totalPrice = products.reduce((sum, product) => sum + product.price, 0)
 
-  const groupedByAisle = sortedProducts.reduce(
-    (acc, product) => {
-      if (!acc[Number(product.aisle)]) {
-        acc[Number(product.aisle)] = []
-      }
-      acc[Number(product.aisle)].push(product)
-      return acc
-    },
-    {} as Record<number, Product[]>,
-  )
+  const groupedByLetter = sortedProducts.reduce((acc, product) => {
+  const letter = product.aisle[0]; // "A" from "A1"
+    if (!acc[letter]) acc[letter] = [];
+    acc[letter].push(product);
+    return acc;
+  }, {} as Record<string, Product[]>);
+
+  // const groupedByAisle = sortedProducts.reduce(
+  //   (acc, product) => {
+  //     if (!acc[Number(product.aisle)]) {
+  //       acc[Number(product.aisle)] = []
+  //     }
+  //     acc[Number(product.aisle)].push(product)
+  //     return acc
+  //   },
+  //   {} as Record<number, Product[]>,
+  // )
 
   return (
     <Card className="sticky top-24 shadow-lg">
@@ -57,31 +65,36 @@ export function ShoppingList({ products, onRemoveProduct, onClearList }: Shoppin
           <>
             <ScrollArea className="h-[400px]">
               <div className="p-4 space-y-4">
-                {Object.entries(groupedByAisle).map(([aisle, aisleProducts]) => (
-                  <div key={aisle} className="space-y-2">
+                {Object.entries(groupedByLetter).map(([letter, letterProducts]) => (
+                  <div key={letter} className="space-y-2">
+                    {/* Top-level aisle header */}
                     <div className="flex items-center gap-2 sticky top-0 bg-background py-1">
                       <div className="bg-accent text-accent-foreground px-2 py-1 rounded text-xs font-bold">
-                        Aisle {aisle}
+                        Aisle {letter}
                       </div>
                       <div className="h-px bg-border flex-1" />
-                    </div>
+                      </div>
+
+                    {/* Products in this letter group */}
                     <div className="space-y-2">
-                      {aisleProducts.map((product) => (
-                        <div
-                          key={product.id}
-                          className="flex items-center gap-3 p-2 rounded-lg bg-card hover:bg-muted/50 transition-colors group"
+                      {letterProducts.map((product) => (
+                      <div
+                        key={product.id}
+                        className="flex items-center gap-3 p-2 rounded-lg bg-card hover:bg-muted/50 transition-colors group"
                         >
-                          <img
-                            src={product.image || "/placeholder.svg"}
+                        <img
+                          src={product.image || "/placeholder.svg"}
                             alt={product.name}
                             className="w-12 h-12 rounded object-cover bg-secondary"
-                          />
-                          <div className="flex-1 min-w-0">
-                            <p className="font-medium text-sm truncate">{product.name}</p>
-                            <p className="text-xs text-muted-foreground">{product.category}</p>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <span className="font-semibold text-sm">${product.price.toFixed(2)}</span>
+                        />
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-sm truncate">
+                            {product.aisle}: {product.name} {/* Show full aisle code */}
+                          </p>
+                          <p className="text-xs text-muted-foreground">{product.category}</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-sm">${product.price.toFixed(2)}</span>
                             <Button
                               variant="ghost"
                               size="icon"

@@ -33,6 +33,9 @@ export function ProductCard({ product, isSelected, onToggle }: ProductCardProps)
           <h4 className="font-semibold text-sm leading-tight text-balance">{product.name}</h4>
           <p className="text-lg font-bold text-primary">${product.price.toFixed(2)}</p>
         </div>
+        <div>
+          <p className="text-sm font-underline text-black" >Available at: {product.store.join(", ")}</p>
+        </div>
       </CardContent>
     </Card>
   )
